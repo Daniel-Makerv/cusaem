@@ -1,0 +1,342 @@
+
+body {
+	font-family: 'Roboto', sans-serif;
+	background:#F0F0F0;
+	font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+main {
+	max-width: 800px;
+	width: 90%;
+	margin-left: 369px;
+	padding: 30px;
+}
+
+.formulario {
+	display: grid;/* para trabajar con un display de tipo grid */
+	grid-template-columns: 1fr 1fr; /* Para dividir en dos columnas */
+	gap: 20px;	/* Espaciado para cada elemento del grid */
+}
+
+.formulario__label {
+	display: block; /* ocupe todo el espacio */
+	font-weight: 700; /*  Para que sea de fuentes negritas*/
+	padding: 10px;		/*  */
+	cursor: pointer;	/* sirve para cuando pase el curso se marque el input */
+}
+
+small{
+	color: red;
+  }
+  
+.formulario__grupo-input {
+	position: relative; /* para posicionar el icono x dentro del input */
+}
+
+.formulario__input {
+
+	width: 100%; /*  para que abarque todo el espacio*/
+	background: rgb(255, 255, 255);
+	border: 3px solid transparent; /* para que solo se vea cuando se da click sobre el */
+	border-radius: 3px;
+	border-color: #DAA520;
+	height: 45px;
+	line-height: 45px; /* para que el texto quede centrado */
+	padding: 0 40px 0 10px;
+	transition: .3s ease all; /*  para una trasicacion de 3 segundos*/
+}
+
+.formulario__input:focus {
+	border: 3px solid #0075FF;/*cuando se de clic cambie de color */
+	outline: none;/*  para eliminar el subrayado que pone el navegador*/
+	box-shadow: 3px 0px 30px rgba(163,163,163, 0.4);
+}
+
+.formulario__input-error {
+	font-size: 12px;
+	margin-bottom: 0;
+	display: none;	/*  */
+}
+
+.formulario__input-error-activo { /* para cuando el error este activo que tenga un display de tipo bloque */
+	display: block;
+}
+.formulario__grupo-textarea {
+	position: relative; /* para posicionar el icono x dentro del input */
+}
+
+.formulario__textarea {
+
+	width: 100%; /*  para que abarque todo el espacio*/
+	background: rgb(255, 255, 255);
+	border: 3px solid transparent; /* para que solo se vea cuando se da click sobre el */
+	border-radius: 3px;
+	border-color: #000;
+	height: 45px;
+	line-height: 45px; /* para que el texto quede centrado */
+	padding: 0 40px 0 10px;
+	transition: .3s ease all; /*  para una trasicacion de 3 segundos*/
+}
+
+.formulario__textarea:focus {
+	border: 3px solid #0075FF;/*cuando se de clic cambie de color */
+	outline: none;/*  para eliminar el subrayado que pone el navegador*/
+	box-shadow: 3px 0px 30px rgba(163,163,163, 0.4);
+}
+
+.formulario__textarea-error {
+	font-size: 12px;
+	margin-bottom: 0;
+	display: none;	/*  */
+}
+
+.formulario__textarea-error-activo { /* para cuando el error este activo que tenga un display de tipo bloque */
+	display: block;
+}
+.formulario__validacion-estado {
+	position: absolute;
+	right: 10px;
+	bottom: 15px;
+	z-index: 100;
+	font-size: 16px;
+	opacity: 0;
+}
+
+.formulario__checkbox {
+	margin-right: 10px;
+}
+
+.formulario__grupo-terminos,
+.formulario__mensaje,
+.formulario__grupo-btn-enviar {
+	grid-column: span 2;
+}
+
+.formulario__mensaje {
+	height: 45px;
+	line-height: 45px;
+	background: #F66060;
+	padding: 0 15px;
+	border-radius: 3px;
+	display: none;
+}
+
+.formulario__mensaje-activo {
+	display: block;
+}
+
+.formulario__mensaje p {
+	margin: 0;
+}
+
+.formulario__grupo-btn-enviar {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.formulario__btn {
+	height: 45px; /* altura de 45 */
+	line-height: 45px; /*alto de linea  */
+	width: 30%;/* ancho del 30 % */
+	background: #000;
+	color: #fff; /* color del texto */
+	font-weight: bold; /* para las negritas */
+	border: none;
+	border-radius: 3px;
+	cursor: pointer;
+	transition: .1s ease all;
+}
+
+.formulario__btn:hover {/*  para cuando se pace el cursor se mostrara la sombra*/
+	box-shadow: 3px 0px 30px rgba(163,163,163, 1);
+}
+
+.formulario__mensaje-exito {
+	font-size: 14px;
+	color: #119200;
+	display: none;
+}
+
+.formulario__mensaje-exito-activo {
+	display: block;
+}
+
+/* ----- -----  Estilos para Validacion ----- ----- */
+.formulario__grupo-correcto .formulario__validacion-estado {
+	color: #1ed12d;
+	opacity: 1;
+}
+
+.formulario__grupo-incorrecto .formulario__label {
+	color: #bb2929;
+}
+
+.formulario__grupo-incorrecto .formulario__validacion-estado {
+	color: #bb2929;
+	opacity: 1;
+}
+
+.formulario__grupo-incorrecto .formulario__input {
+	border: 3px solid #bb2929;
+}
+
+
+/* ----- -----  Mediaqueries ----- ----- */
+@media screen and (max-width: 800px) {
+	.formulario {
+		grid-template-columns: 1fr;
+	}
+	.formulario__grupo-terminos,
+	.formulario__mensaje,
+	.formulario__grupo-btn-enviar {
+		grid-column: 1;
+	}
+	.formulario__btn {
+		width: 100%;
+
+	}
+}
+
+input[type=range].rango{
+    display: block;
+    width: 100%;
+}
+input[type=range].rango:focus {
+  outline: none;
+}
+input[type=range].rango::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 14px;
+  cursor: pointer;
+  animation: 0.2s;
+  box-shadow: 1px 1px 1px #004856;
+  background: #004856;
+  border-radius: 14px;
+  border: 0px solid #000000;
+}
+input[type=range].rango::-webkit-slider-thumb {
+  box-shadow: 0px 0px 0px #000000;
+  border: 0px solid #000000;
+  height: 20px;
+  width: 40px;
+  border-radius: 12px;
+  background: #529DE1;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -3px;
+}
+input[type=range].rango:focus::-webkit-slider-runnable-track {
+  background: #004856;
+}
+input[type=range].rango::-moz-range-track {
+  width: 100%;
+  height: 14px;
+  cursor: pointer;
+  animation: 0.2s;
+  box-shadow: 1px 1px 1px #004856;
+  background: #004856;
+  border-radius: 14px;
+  border: 0px solid #000000;
+}
+input[type=range].rango::-moz-range-thumb {
+  box-shadow: 0px 0px 0px #000000;
+  border: 0px solid #000000;
+  height: 20px;
+  width: 40px;
+  border-radius: 12px;
+  background: #529DE1;
+  cursor: pointer;
+}
+input[type=range].rango::-ms-track {
+  width: 100%;
+  height: 14px;
+  cursor: pointer;
+  animation: 0.2s;
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+input[type=range].rango::-ms-fill-lower {
+  background: #004856;
+  border: 0px solid #000000;
+  border-radius: 28px;
+  box-shadow: 1px 1px 1px #004856;
+}
+input[type=range].rango::-ms-fill-upper {
+  background: #004856;
+  border: 0px solid #000000;
+  border-radius: 28px;
+  box-shadow: 1px 1px 1px #004856;
+}
+input[type=range].rango::-ms-thumb {
+  margin-top: 1px;
+  box-shadow: 0px 0px 0px #000000;
+  border: 0px solid #000000;
+  height: 20px;
+  width: 40px;
+  border-radius: 12px;
+  background: #529DE1;
+  cursor: pointer;
+}
+input[type=range].rango:focus::-ms-fill-lower {
+  background: #004856;
+}
+input[type=range].rango:focus::-ms-fill-upper {
+  background: #004856;
+}
+
+.caja {
+   margin:5px auto 30px auto;
+   border:3px solid #000;
+	 border-radius: 3px;
+   height:45px;
+   overflow: hidden;
+   width: 350px;
+   position:relative;
+}
+select {
+   background: transparent;
+   border: none;
+   font-size: 14px;
+   height: 30px;
+   padding: 5px;
+   width: 350px;
+}
+select:focus{ outline: none;}
+
+.caja::after{
+	content:"\025be";
+	display:table-cell;
+	padding-top:7px;
+	text-align:center;
+	width:30px;
+	height:45px;
+	background-color:#d9d9d9;
+	position:absolute;
+	top:0;
+	right:0px;
+	pointer-events: none;
+}
+.border-primary {
+  border-color: #6f42c1 !important;
+}
+.card {
+    position: relative;
+		float: right;
+    max-width: 24rem;
+		height: 150px;
+    border: 2px solid rgba(0, 0, 0, 0.125);
+    border-radius: 0.15rem;
+}
+.card.border-primary{
+    box-shadow: 0 0 2px rgb(111 66 193 / 90%), 0 0 4px rgb(111 66 193 / 40%), 0 0 1rem rgb(111 66 193 / 30%), 0 0 4rem rgb(111 66 193 / 10%);
+}
+.card-header {
+    margin-bottom: 0;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.125);
+}
+.butt{
+	margin-top: 0.2cm;
+	margin-left: 2cm;
+}
